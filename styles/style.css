@@ -1,0 +1,96 @@
+/* Réinitialisation des marges et paddings pour tous les éléments */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; /* Inclut le padding et la bordure dans les calculs de largeur et hauteur */
+}
+
+/* Styles pour la barre de navigation */
+nav {
+    width: 100%;
+    margin: 0 auto; /* Centre la barre de navigation */
+    background-color: #f1f1f1; /* Couleur de fond de la barre de navigation */
+    position: sticky; /* Rend la navigation fixe en haut lors du défilement */
+    top: 0px; /* Positionne l'élément collant en haut de la page */
+}
+
+/* Suppression des puces de liste */
+nav ul {
+    list-style-type: none;
+}
+
+/* Styles pour les éléments de liste du menu principal */
+nav ul li {
+    float: left; /* Aligne les éléments de menu les uns à côté des autres */
+    width: 15%; /* Définit la largeur de chaque élément de menu */
+    text-align: center;
+    position: relative; /* Nécessaire pour positionner les sous-menus absolus par rapport à cet élément */
+}
+
+/* Clearfix pour le conteneur de la liste */
+nav ul::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Styles pour les liens du menu */
+nav a {
+    display: block; /* Permet de cliquer sur toute la zone de l'élément */
+    text-decoration: none; /* Enlève le soulignement des liens */
+    color: black;
+    border-bottom: 2px solid transparent; /* Bordure inférieure transparente pour l'effet au survol */
+    padding: 10px 0px;
+}
+
+/* Effet au survol des liens du menu */
+nav a:hover {
+    color: orange;
+    border-bottom: 2px solid gold; /* Change la bordure inférieure au survol */
+}
+
+/* Styles pour les sous-menus */
+.sous {
+    display: none; /* Cache le sous-menu par défaut */
+    box-shadow: 0px 1px 2px #CCC; /* Ajoute une ombre portée */
+    background-color: white;
+    position: absolute; /* Positionne le sous-menu par rapport à son parent */
+    width: 100%; /* Le sous-menu a la même largeur que le parent */
+    z-index: 1000; /* Assure que le sous-menu apparaît au-dessus des autres éléments */
+}
+
+/* Affiche le sous-menu lorsque la souris survole le parent */
+nav > ul li:hover .sous {
+    display: block;
+}
+
+/* Styles pour les éléments de liste du sous-menu */
+.sous li {
+    float: none; /* Annule le flottement pour les éléments du sous-menu */
+    width: 100%;
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+/* Styles pour les liens du sous-menu */
+.sous a {
+    padding: 10px;
+    border-bottom: none;
+}
+
+/* Effet au survol des liens du sous-menu */
+.sous a:hover {
+    border-bottom: none;
+    background-color: rgba(200, 200, 200, 0.1); /* Change le fond au survol */
+}
+
+/* Ajoute un symbole de flèche vers le bas aux éléments du menu principal qui ont un sous-menu */
+.deroulant > a::after {
+    content: " ▼";
+    font-size: 12px;
+}
+
+/* Styles pour un conteneur de contenu (non utilisé dans le HTML fourni) */
+.conteneur {
+    margin: 50px 20px;
+    height: 1500px; /* Hauteur pour permettre le défilement et tester le positionnement sticky */
+}
