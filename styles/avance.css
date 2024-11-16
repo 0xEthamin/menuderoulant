@@ -24,14 +24,14 @@ body {
   position: absolute;
   left: 0;
   list-style: none;
-  transform: rotate(0deg) translateX(100px);
+  transform: rotate(0deg) translateX(100px); 
   transform-origin: 130px;
   transition: 0.5s;
   transition-delay: calc(0.1s * var(--i));
 }
 
 .menu.active li {
-  transform: rotate(calc(360deg / 8 * var(--i)));
+  transform: rotate(calc(360deg / 8 * var(--i))); /* repartis les icons autour du cercle */
 }
 
 .menu a {
@@ -54,6 +54,7 @@ body {
   color: var(--clr);
 }
 
+/* creer le cercle avec les barres de couleurs */
 .menu a::before {
   content: "";
   position: absolute;
