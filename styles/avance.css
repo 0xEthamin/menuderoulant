@@ -46,7 +46,7 @@ body {
   transform: rotate(calc(360deg / -8 * var(--i)));
   transition: 1s;
   color: transparent;
-  transition-delay: 0.5s;
+  transition-delay: 1s;
   filter: drop-shadow(0 0 2px var(--clr));
 }
 
